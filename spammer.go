@@ -80,8 +80,6 @@ func getVanityURL(token string, config *Config) (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("error creating HTTP request: %v", err)
 	}
-
-	req.Header.Set("Authorization", "Bot "+token)
 	req.Header.Set("Content-Type", "application/json")
 
 	client := &http.Client{}
